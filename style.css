@@ -1,6 +1,6 @@
 body{
   margin: 0;
-  background: url(images/water-shore.jpg) no-repeat fixed bottom, url(images/water-shore-placehold.jpg) #203246 no-repeat fixed bottom;
+  background: url(images/water-shore.jpg) #203246 no-repeat fixed bottom;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -18,6 +18,7 @@ h1 {
   font-weight: 700;
   color: white;
   margin: 0.7em 0;
+  text-align: center;
 }
 
 h2 {
@@ -26,6 +27,7 @@ h2 {
   font-weight: 500;
   color: white;
   margin: 0.5em 0;
+  text-align: center;
 }
 
 p {
@@ -41,11 +43,13 @@ img {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
-  position: absolute;
   background-color: rgba(40, 60, 80, 0.8);
-  top: 230px;
-  padding: 4%;
+  padding: 4vw;
   width: 92%;
 }
 
@@ -63,26 +67,26 @@ img {
   transform: translateY(-50%);
   margin: 0;
   font-family: Lobster, 'century gothic';
-  text-align: center;
   font-size: 6vw;
   letter-spacing: 2.5vw;
   text-indent: 2.5vw;
 }
 
 #logo {
-  position: absolute;
-  top: 50px;
+  margin: 50px 0 50px 0;
   width: 100%;
-  text-align: center;
 }
 
 #logo h1 {
+  display: inline-block;
   position: relative;
+  left: 50%;
+  transform: translate(-50%);
   margin: 0;
-  color: white;
   font-family: Lobster, 'century gothic';
   font-size: 24pt;
   letter-spacing: 0.4vw;
+
 }
 
 #miniquote {
@@ -95,14 +99,13 @@ img {
 }
 
 #navbar {
-  position: absolute;
-  top: 50px;
+  margin: 50px 0;
   width: 100%;
   text-align: center;
 }
 
 #navbar.home {
-  top: 120px;
+  position: absolute;
 }
 
 #navbar ul {
@@ -211,15 +214,88 @@ img {
   padding: 0 20px 0 0;
 }
 
-#modelling-gallery {
+body.gallery {
+  background: white;
+}
+
+.gallery-container {
   display: flex;
   flex-flow: row wrap;
 }
 
-#modelling-gallery-item {
-  max-width: 50vh;
+.gallery-item {
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+  background-color: white;
   overflow: hidden;
-  margin: 5px;
+  --text-opacity: 0;
+}
+
+.gallery-item.first {
+  --display-div: block;
+}
+
+.gallery-item.first:hover {
+  --display-div: none;
+}
+
+.gallery-item.first a {
+  opacity: var(--text-opacity);
+  transition: opacity 0.2s linear;
+}
+
+.gallery-item.first div {
+  position: absolute;
+  top: 0;
+  opacity: calc(1 - var(--text-opacity));
+  transition: opacity 0.2s linear;
+  display: var(--display-div);
+  transition-delay: display 0.2s;
+}
+
+.gallery-item.first h1 {
+  color: black;
+  font-weight: 700;
+  font-size: 16pt;
+}
+
+.gallery-item.first p {
+  color: black;
+  font-size: 12pt;
+  text-align: center;
+}
+
+.gallery-item h2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: black;
+  background-color: white;
+  opacity: var(--text-opacity);
+  transition: opacity 0.2s linear;
+  pointer-events: none;
+}
+
+.gallery-item:hover {
+  --text-opacity: 1;
+}
+
+.gallery-item img.landscape {
+  position: inherit;
+  width: auto;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gallery-item img.portrait {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @media screen and (max-width: 1200px) {
@@ -242,5 +318,31 @@ img {
       "title"
       "visual"
       "backstory";
+  }
+
+  .gallery-item {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .gallery-item {
+    width: calc(100vw/3);
+    height: calc(100vw/3);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .gallery-item {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gallery-item {
+    width: 100vw;
+    height: 100vw;
   }
 }
