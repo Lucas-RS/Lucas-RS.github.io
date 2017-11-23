@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:700|Quicksand:300,400,700');
+
 body {
   margin: 0;
-  background: url(images/water-shore.jpg) #203246 no-repeat fixed bottom;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-image: url(images/water-shore.jpg);
+  background-color: #203246;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-attachment: fixed;
   background-size: cover;
-  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -59,25 +61,23 @@ a {
 }
 
 #homepage-header h1 {
-  width: 100%;
-  font-family: Lobster, 'century gothic';
+  font-family: Lato, 'century gothic';
   font-size: 6vw;
-  letter-spacing: 2.5vw;
-  text-indent: 2.5vw;
+  letter-spacing: 2vw;
+  text-indent: 2vw;
   margin: 0;
 }
 
 @keyframes slogan-position {
   from {top: 75px;}
-  to {top: 25px;}
+  to {top: 0;}
 }
 
 #homepage-header p {
   font-size: 24pt;
   position: relative;
-  top: 75px;
   margin: 0;
-  animation: slogan-position 1.3s linear forwards;
+  animation: slogan-position 1.3s linear 0.7 forwards;
 }
 
 @keyframes button-fadein {
@@ -96,7 +96,7 @@ a {
   font-weight: 300;
   opacity: 0;
   pointer-events: none;
-  animation: button-fadein 1.2s linear 1.1s forwards;
+  animation: button-fadein 1.2s linear 1s forwards;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition: box-shadow 0.2s linear;
 }
@@ -108,23 +108,20 @@ a {
 }
 
 #logo {
-  margin: 50px 0 50px 0;
+  margin-bottom: 50px;
   width: 100%;
+  text-align: center;
 }
 
-#logo h1 {
-  display: inline-block;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
+#logo a {
   margin: 0;
-  font-family: Lobster, 'century gothic';
-  font-size: 24pt;
-  letter-spacing: 0.4vw;
+  font-family: Lato, 'century gothic';
+  font-size: 65pt;
+  letter-spacing: 20pt;
 }
 
 #navbar {
-  margin: 50px 0;
+  margin-top: 50px;
   width: 100%;
   text-align: center;
 }
@@ -151,9 +148,15 @@ a {
   outline: 3px white solid;
 }
 
+.topbar {
+  padding: 50px 0;
+  background-color: rgba(64, 128, 191, 0.8);
+  animation: topbar-color 30s linear infinite alternate;
+}
+
 .container {
   display: table-cell;
-  background-color: rgba(40, 60, 80, 0.8);
+  background-color: rgba(45, 89, 134, 0.8);
   padding: 0 4vw 4vw 4vw;
   width: 100vw;
 }
@@ -286,13 +289,14 @@ body.gallery {
 
 .gallery-item h2 {
   margin: 0;
+  font-size: 30pt;
+  color: black;
+  background-color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  color: black;
-  background-color: white;
   opacity: var(--text-opacity);
   transition: opacity 0.2s linear;
   pointer-events: none;
@@ -366,10 +370,6 @@ body.gallery {
     width: 50vw;
     height: 50vw;
   }
-
-  p {
-    font-size: 24pt;
-  }
 }
 
 @media screen and (max-width: 500px) {
@@ -380,8 +380,9 @@ body.gallery {
 }
 
 @media screen and (max-height: 500px) {
-  #homepage-header-container {
+  #homepage-header {
     position: static;
     transform: translateY(0);
+    margin: 50px 0;
   }
 }
