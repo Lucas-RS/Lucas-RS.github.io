@@ -61,10 +61,11 @@ a {
 }
 
 #homepage-header h1 {
+  position: relative;
   font-family: Lato, 'century gothic';
   font-size: 6vw;
   letter-spacing: 2vw;
-  text-indent: 2vw;
+  left: 1vw;
   margin: 0;
 }
 
@@ -114,6 +115,8 @@ a {
 }
 
 #logo a {
+  position: relative;
+  left: 10pt;
   margin: 0;
   font-family: Lato, 'century gothic';
   font-size: 65pt;
@@ -140,7 +143,6 @@ a {
 
 #navbar a {
   font-size: 24pt;
-
   padding: 10px 2.8vw;
 }
 
@@ -359,6 +361,28 @@ body.gallery {
 }
 
 @media screen and (max-width: 1000px) {
+  body {
+    background: #203246;
+  }
+
+  #homepage-header h1 {
+    font-size: 40pt;
+    text-indent: 0;
+  }
+
+  #logo a {
+    font-size: 30pt;
+    letter-spacing: 5pt;
+    left: 2.5pt;
+  }
+
+  .topbar {
+    background-color: rgb(64, 128, 191);
+  }
+
+  .container {
+    background-color: rgb(45, 89, 134);
+  }
   .gallery-item {
     width: calc(100vw/3);
     height: calc(100vw/3);
