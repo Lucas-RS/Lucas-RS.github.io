@@ -267,7 +267,7 @@ body.gallery {
 
 .gallery__info-container p {
   color: black;
-  font-size: calc(calc(var(--gallery-columb-count) - 2.5) * calc(var(--gallery-columb-count) - 5) * 1pt + 16pt);
+  font-size: calc(calc(var(--gallery-columb-count) - 2.5) * calc(var(--gallery-columb-count) - 5) * 1pt + 14pt);
   text-align: center;
 }
 
