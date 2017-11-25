@@ -238,74 +238,53 @@ body.gallery {
   background: white;
 }
 
-.gallery-container {
+.gallery__container {
   display: flex;
   flex-flow: row wrap;
+  --gallery-columb-count: 5;
 }
 
-.gallery-item {
+.gallery__item {
   position: relative;
-  width: 20vw;
-  height: 20vw;
+  width: calc(100vw/var(--gallery-columb-count));
+  height: calc(100vw/var(--gallery-columb-count));
   background-color: white;
   overflow: hidden;
-  --text-opacity: 0;
+  cursor: pointer;
 }
 
-.gallery-item.info {
-  --display-div: block;
-}
-
-.gallery-item.info:hover {
-  --display-div: none;
-}
-
-.gallery-item.info a {
-  opacity: var(--text-opacity);
-  transition: opacity 0.2s linear;
-}
-
-.gallery-item.info div {
-  position: absolute;
-  top: 0;
-  opacity: calc(1 - var(--text-opacity));
-  transition: opacity 0.2s linear;
-  display: var(--display-div);
-  transition-delay: display 0.2s;
-}
-
-.gallery-item.info h1 {
-  color: black;
-  font-weight: 700;
-  font-size: 16pt;
-}
-
-.gallery-item.info p {
-  color: black;
-  font-size: 12pt;
-  text-align: center;
-}
-
-.gallery-item h2 {
-  margin: 0;
-  font-size: 30pt;
-  color: black;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.gallery__info-container {
   width: 100%;
-  opacity: var(--text-opacity);
-  transition: opacity 0.2s linear;
   pointer-events: none;
 }
 
-.gallery-item:hover {
-  --text-opacity: 1;
+.gallery__info-container h1 {
+  background-color: #4e8bb1;
+  margin: 0;
+  padding: 0.7em 0;
+  font-size: 20pt;
 }
 
-.gallery-item img.landscape {
+.gallery__info-container p {
+  color: black;
+  font-size: calc(calc(var(--gallery-columb-count) - 2.5) * calc(var(--gallery-columb-count) - 5) * 1pt + 16pt);
+  text-align: center;
+}
+
+.gallery__backbutton {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  width: 100%;
+  background-color: #4e8bb1;
+}
+
+.gallery__backbutton:hover {
+  opacity: 1;
+}
+
+.gallery__imagethumb.landscape {
   position: inherit;
   width: auto;
   height: 100%;
@@ -313,10 +292,75 @@ body.gallery {
   transform: translateX(-50%);
 }
 
-.gallery-item img.portrait {
+.gallery__imagethumb.portrait {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+#imagepopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+@keyframes fade-out-opacity {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+#imagepopup__hint {
+  margin: 15px 0;
+  line-height: 1;
+  font-size: 20px;
+  text-align: center;
+  pointer-events: none;
+  animation: fade-out-opacity 5s ease-in 1s forwards;
+}
+
+#imagepopup__close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
+}
+
+#imagepopup__close:hover {
+  color: grey;
+  cursor: pointer;
+}
+
+#imagepopup__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: calc(100vh - 100px);
+  width: auto;
+}
+
+#imagepopup__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0.5em 0;
+  outline: 5px solid black;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
 }
 
 .literature-item {
@@ -327,6 +371,12 @@ body.gallery {
   font-style: italic;
   text-align: center;
   line-height: 1.7em;
+}
+
+@media screen and (max-width: 1500px) {
+  .gallery__container {
+    --gallery-columb-count: 4;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -351,9 +401,8 @@ body.gallery {
       "backstory";
   }
 
-  .gallery-item {
-    width: 25vw;
-    height: 25vw;
+  .gallery__container {
+    --gallery-columb-count: 3;
   }
 }
 
@@ -380,23 +429,17 @@ body.gallery {
   .container {
     background-color: rgb(45, 89, 134);
   }
-  .gallery-item {
-    width: calc(100vw/3);
-    height: calc(100vw/3);
+}
+
+@media screen and (max-width: 900px) {
+  .gallery__container {
+    --gallery-columb-count: 2;
   }
 }
 
-@media screen and (max-width: 800px) {
-  .gallery-item {
-    width: 50vw;
-    height: 50vw;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .gallery-item {
-    width: 100vw;
-    height: 100vw;
+@media screen and (max-width: 600px) {
+  .gallery__container {
+    --gallery-columb-count: 1;
   }
 }
 
