@@ -67,6 +67,7 @@ a {
   letter-spacing: 2vw;
   left: 1vw;
   margin: 0;
+  transition: 1s
 }
 
 @keyframes slogan-position {
@@ -122,6 +123,12 @@ a {
   font-family: Lato, 'century gothic';
   font-size: 65pt;
   letter-spacing: 20pt;
+  transition: 1s;
+}
+
+#logo a:hover {
+  letter-spacing: 30pt;
+  left: 15pt;
 }
 
 #navbar {
@@ -146,24 +153,23 @@ a {
   font-size: 24pt;
   padding: 10px 2.8vw;
   border: 3px rgba(0, 0, 0, 0) solid;
-  transition: border 0.2s linear 0.1s;
+  transition: 0.2s linear 0.1s;
 }
 
 #navbar a:hover {
   border: 3px white solid;
-  transition: border 0.2s linear;
 }
 
 .topbar {
   display: inline-block;
   width: 100%;
-  background-color: rgba(64, 128, 191, 0.8);
+  background-color: rgba(80, 124, 175, 0.8);
   animation: topbar-color 30s linear infinite alternate;
 }
 
 .container {
   display: table-cell;
-  background-color: rgba(45, 89, 134, 0.8);
+  background-color: rgba(32, 50, 70, 0.8);
   padding: 0 4vw 4vw 4vw;
   width: 100vw;
 }
@@ -186,17 +192,16 @@ a {
   border-radius: 100%;
   width: 400px;
   height: 400px;
-  transition: background-color 1s linear;
+  transition: 1s;
 }
 
 .projects li:hover {
   background-color: rgba(255, 255, 255, 0.3);
-  transition: background-color 1s linear;
+  transform: translateY(-5%);
 }
 
 .projects li:active {
   background-color: rgba(255, 255, 255, 0.5);
-  transition: background-color 0.1s linear;
 }
 
 .projects p {
@@ -341,10 +346,10 @@ body.gallery {
 
 #imagepopup__close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: -12px;
+  right: 5px;
   color: white;
-  font-size: 40px;
+  font-size: 66px;
   font-weight: bold;
   text-align: center;
   transition: 0.3s;
@@ -443,14 +448,20 @@ body.gallery {
     font-size: 30pt;
     letter-spacing: 5pt;
     left: 2.5pt;
+    transition: 1s;
+  }
+
+  #logo a:hover {
+    letter-spacing: 7pt;
+    left: 3.5pt;
   }
 
   .topbar {
-    background-color: rgb(64, 128, 191);
+    background-color: rgb(80, 124, 175);
   }
 
   .container {
-    background-color: rgb(45, 89, 134);
+    background-color: rgb(32, 50, 70);
   }
 }
 
