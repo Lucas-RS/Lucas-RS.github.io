@@ -7,21 +7,31 @@
   <style>
     :root {
       font-family: Quicksand;
+      color: #ddd
+    }
+    
+    body {
+      background-color: #aaa;
     }
     
     #logo {
-      margin: 0.5em 2em;
+      margin: 1em;
+      font-size: 1.5em;
     }
     
     #nav-list {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
     }
   </style>
 </head>
 <body>
   <h1 id="logo">lucas riedlshah</h1>
-  <ul id="nav-list">
-    <li><a href="/p5js-projects">p5.js projects</a></li>
-  </ul>
+  <div id="nav-list">
+    <a href="/p5js-projects">p5.js projects</a>
+  </div>
 </body>
 </html>
