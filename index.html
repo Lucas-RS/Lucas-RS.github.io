@@ -10,10 +10,6 @@
       color: white;
     }
     
-    body {
-      background-color: #212;
-    }
-    
     #logo {
       font-size: 1.7em;
       text-align: center;
@@ -39,5 +35,10 @@
   <div id="nav-list">
     <a href="/p5js-projects">p5.js projects</a>
   </div>
+  <script>
+    window.onload = function()  {
+      document.body.style.background = "rgb(" + Math.round(Math.random()*230) + "," + Math.round(Math.random()*230) + "," + Math.round(Math.random()*230) + ")"
+    }
+  </script>
 </body>
 </html>
