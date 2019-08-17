@@ -1,44 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Lucas RiedlShah</title>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:400" rel="stylesheet"> 
-  <style>
-    :root {
-      font-family: Quicksand;
-      color: white;
-    }
-    
-    #logo {
-      font-size: 1.7em;
-      text-align: center;
-    }
-    
-    #nav-list {
-      font-size: 3em;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    
-    a {
-      text-decoration: inherit;
-      color: inherit;
-    }
-  </style>
-</head>
-<body>
-  <h1 id="logo">lucas riedlshah</h1>
-  <div id="nav-list">
-    <a href="/p5js-projects">p5.js projects</a>
-  </div>
-  <script>
-    window.onload = function()  {
-      document.body.style.background = "rgb(" + Math.round(Math.random()*230) + "," + Math.round(Math.random()*230) + "," + Math.round(Math.random()*230) + ")"
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lucas RiedlShah</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:400"
+      rel="stylesheet"
+    />
+    <script src="./typeit.min.js"></script>
+    <style>
+      :root {
+        font-family: Quicksand;
+        color: white;
+      }
+
+      #logo {
+        font-size: 1.7em;
+        text-align: center;
+        letter-spacing: 0.1em;
+      }
+
+      .body-paragraph {
+        font-size: 3em;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+
+      #type-effect {
+        font-size: 2em;
+        padding: 0.5em;
+        background-color: rgba(0,0,0,0.1);
+        top: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 2em;
+      }
+
+      a {
+        text-decoration: inherit;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="logo">lucas riedlshah</h1>
+    <div class="body-paragraph">
+      <a href="/p5js-projects">> p5.js projects</a>
+    </div>
+    <span id="type-effect" class="body-paragraph"></span>
+    <script>
+      window.onload = function() {
+        document.body.style.background =
+          "hsl(" +
+          Math.round(Math.random() * 255) +
+          "," +
+          Math.round(Math.random() * 50 + 25) +
+          "%," +
+          Math.round(Math.random() * 50 + 25) +
+          "%)";
+        new TypeIt("#type-effect", { startDelay: 200, loop: true })
+          .type('hey,')
+          .pause(300)
+          .delete()
+          .pause(250)
+          .type('do you like nice things?')
+          .pause(750)
+          .delete()
+          .type('yes.')
+          .pause(250)
+          .type(' you do.')
+          .pause(750)
+          .delete()
+          .type('above are some links.')
+          .pause(750)
+          .type(' click them.')
+          .pause(1000)
+          .delete()
+          .type('please? ')
+          .pause(500)
+          .type(' \ud83e\udd7a')
+          .pause(3000)
+          .empty()
+          .type('ok fine then don\'t... rude.')
+          .pause(750)
+          .empty()
+          .type('here\'s some information about me:')
+          .pause(750)
+          .delete()
+          .type('> i make nic')
+          .pause(200)
+          .delete(8)
+          .type('try to make nice things')
+          .pause(250)
+          .break()
+          .type('> sometimes i succeed')
+          .pause(1000)
+          .delete()
+          .type('> i hold passion for visual art and music.')
+          .pause(500)
+          .break()
+          .type('the links above will display said passion.')
+          .pause(500)
+          .break()
+          .type('go on.')
+          .pause(500)
+          .type(' click one.')
+          .pause(500)
+          .type(' come on, you know you want to.')
+          .pause(2000)
+          .empty()
+          .type('alright then, here we go again...')
+          .pause(500)
+          .go();
+      };
+    </script>
+  </body>
 </html>
