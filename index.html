@@ -29,19 +29,6 @@
         margin: 0 0.2em;
       }
 
-      #type-effect {
-        background-color: #0002;
-        font-size: 4em;
-        position: fixed;
-        text-align: center;
-        padding: 0.5em;
-        width: 100%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        line-height: 1.5em;
-      }
-
       a {
         text-decoration: inherit;
         color: inherit;
@@ -53,12 +40,11 @@
     <div id="nav" class="body-paragraph">
       <a href="/DEPRECATED-p5js-projects/">> p5.js projects</a>
       <br>
-      <a href="https://www.instagram.com/generatedbyme/">> instagram</a>
+      <a href="https://www.instagram.com/generatively/">> instagram</a>
       <a href="https://www.youtube.com/channel/UCSBE1chp4zYyOF8iV6qbX3Q"
         >> youtube</a
       >
     </div>
-    <span id="type-effect" class="body-paragraph"></span>
     <script>
       window.onload = function() {
         document.body.style.background =
@@ -69,59 +55,6 @@
           "%," +
           Math.round(Math.random() * 50 + 25) +
           "%)";
-        new TypeIt("#type-effect", { startDelay: 200, loop: true })
-          .type("hey,")
-          .pause(500)
-          .delete()
-          .type("do you like nice things?")
-          .pause(750)
-          .delete()
-          .type("yes.")
-          .pause(250)
-          .type(" you do.")
-          .pause(750)
-          .delete()
-          .type("above are some links.")
-          .pause(750)
-          .type(" click them.")
-          .pause(1000)
-          .delete()
-          .type("please? ")
-          .pause(500)
-          .type(" \ud83e\udd7a")
-          .pause(3000)
-          .empty()
-          .type("ok fine then don't... rude.")
-          .pause(750)
-          .empty()
-          .type("here's some information about me:")
-          .pause(750)
-          .delete()
-          .type("> i make nic")
-          .pause(200)
-          .delete(8)
-          .type("try to make nice things")
-          .pause(250)
-          .break()
-          .type("> sometimes i succeed")
-          .pause(1000)
-          .delete()
-          .type("> i hold passion for visual art and music.")
-          .pause(500)
-          .break()
-          .type("the links above will display said passion.")
-          .pause(500)
-          .break()
-          .type("go on.")
-          .pause(500)
-          .type(" click one.")
-          .pause(500)
-          .type(" come on, you know you want to.")
-          .pause(2000)
-          .empty()
-          .type("alright then, here we go again...")
-          .pause(500)
-          .go();
       };
     </script>
   </body>
